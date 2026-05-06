@@ -1,0 +1,75 @@
+# ─── Problem Setup ────────────────────────────────────────────────────────────
+problem:
+  epsilon: 0.01
+
+  # gaussian-specific
+  gaussian:
+    n: 2000
+    mean_a: 0.3
+    mean_b: 0.7
+    std_a: 0.001
+    std_b: 0.001
+    seed: 42
+    rank: 300
+    L_H: 0.001
+    max_time: 100
+
+  # gene-specific
+  gene:
+    min_cells: 10
+    n_pca_comps: 30
+    seed: 42
+    rank: 2000
+    L_H: 0.001
+    max_time: 4000
+
+  # knowledge_distillation-specific
+  knowledge_distillation:
+    teacher: resnet50
+    student: resnet18
+    image: dog.jpg        # path to image file
+    temperature: 1
+    rank: 200
+    L_H: 10
+    max_time: 100
+
+# ─── Solvers ──────────────────────────────────────────────────────────────────
+solvers:
+  - name: Sinkhorn
+    max_iter: 500
+
+  - name: Newton
+    max_iter: 100
+    L_H: 0.005
+    reg: false
+
+  - name: GRN
+    max_iter: 100
+    reg: true
+
+  - name: SORN
+    max_iter: 100
+
+  - name: Newton_Sketch
+    max_iter: 100
+
+  - name: SGN
+    max_iter: 100
+    L: 0.01
+
+  - name: KCRN
+    max_iter: 100
+
+  - name: SSCN
+    max_iter: 100
+
+  - name: AGD
+    max_iter: 5000
+
+  - name: LBFGS
+    max_iter: 5000
+
+# ─── Output ───────────────────────────────────────────────────────────────────
+output:
+  results_dir: results
+  figures_dir: figures

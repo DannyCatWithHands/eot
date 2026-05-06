@@ -1,0 +1,17 @@
+numpy
+scipy
+matplotlib
+seaborn
+tqdm
+pyyaml
+
+# For the gene expression problem
+scanpy
+
+# For the knowledge distillation problem
+torch
+torchvision
+Pillow
+
+# Notebook
+jupyter
