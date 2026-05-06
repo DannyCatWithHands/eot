@@ -69,9 +69,9 @@ solvers:
 | Config name     | Method                                         |
 |-----------------|------------------------------------------------|
 | `Sinkhorn`      | Sinkhorn–Knopp iterative scaling               |
-| `Newton`        | Exact Newton (direct Hessian solve)            |
-| `GRN`           | Regularised Newton (Tikhonov)                  |
-| `SORN`          | **Proposed** — Randomized low rank Hessian Overestimation |
+| `Newton`        | Exact Newton                                   |
+| `GRN`           | Global Regularised Newton                      |
+| `SORN`          | **Proposed** Stochastic Overestimated Regularized Newton|
 | `Newton_Sketch` | Randomized Subspace Newton                     |
 | `SGN`           | Sketchy Global Newton                          |
 | `KCRN`          | Krylov Cubic Regularized Newton                |
